@@ -1,0 +1,36 @@
+const mockCoins = [
+  {
+    id: "bitcoin",
+    rank: 1,
+    symbol: "BTC",
+    name: "Bitcoin",
+    image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
+    vwap24Hr: 22828.25,
+    change24Hr: 2.02,
+    marketCap: 446400000000,
+    price: 23162.22,
+  },
+  {
+    id: "ethereum",
+    rank: 2,
+    symbol: "ETH",
+    name: "Ethereum",
+    image: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
+    vwap24Hr: 1573.93,
+    change24Hr: 4.35,
+    marketCap: 197900000000,
+    price: 1617.2,
+  },
+  {
+    id: "tether",
+    rank: 3,
+    symbol: "USDT",
+    name: "Tether",
+    image: "https://assets.coingecko.com/coins/images/325/large/Tether.png",
+    vwap24Hr: 1,
+    change24Hr: -0.04,
+    marketCap: 67300000000,
+    price: 1,
+  },
+];
+export default mockCoins;
