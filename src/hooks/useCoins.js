@@ -5,7 +5,7 @@ export const useCoins = () => {
   return useQuery({
     queryKey: ["coins"],
     queryFn: () => getCoins(),
-    staleTime: 60 * 1000,
-    refetchInterval: 60 * 1000,
+    staleTime: 10 * 1000,
+    refetchInterval: 10 * 1000,
   });
 };
