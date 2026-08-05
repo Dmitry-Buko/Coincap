@@ -3,6 +3,7 @@ import { useCoin } from "../hooks/useCoin";
 import Container from "../components/layout/Container";
 import CoinHeader from "../components/coin/CoinHeader";
 import CoinStats from "../components/coin/CoinStats";
+import CoinChart from "../components/coin/CoinChart";
 
 const CoinDetail = () => {
   const { id } = useParams();
@@ -28,7 +29,7 @@ const CoinDetail = () => {
     <Container>
       <CoinHeader coin={data} />
       <CoinStats coin={data} />
-      {/* график */}
+      <CoinChart id={id} chart={data.market_data.sparkline_7d.price} />
     </Container>
   );
 };

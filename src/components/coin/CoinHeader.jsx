@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CoinHeader = ({ coin }) => {
   return (
-    <section className="mb-8 flex flex-col justify-between gap-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:flex-row md:items-center">
+    <section className="mb-2 flex flex-col justify-between gap-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:flex-row md:items-center">
       <div className="flex items-center gap-5">
         <Link
           to="/"

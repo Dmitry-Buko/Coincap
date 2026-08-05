@@ -7,7 +7,6 @@ const Header = () => {
         <div className="flex h-20 items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-indigo-600">CoinCap</h1>
-
             <p className="text-gray-500">Cryptocurrency Tracker</p>
           </div>
 

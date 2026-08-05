@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useCoins } from "../../hooks/useCoins";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
-import BuyCoinModal from "../ui/BuyCoinModal";
+import BuyCoinModal from "../coin/BuyCoinModal";
 
 const CoinsTable = () => {
   const [selectedCoin, setSelectedCoin] = useState(null);
   const { data, isLoading, isError, error } = useCoins();
+
+  console.log("data CoinsTable:", data?.[0]);//__________________________LOG
 
   const openModal = (coin) => {
     setSelectedCoin(coin);

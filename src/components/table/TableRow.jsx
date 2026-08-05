@@ -19,7 +19,6 @@ const TableRow = ({ coin, onBuy }) => {
       <td>
         <div>
           <p className="font-semibold">{coin.name}</p>
-
           <p className="text-sm uppercase text-gray-500">{coin.symbol}</p>
         </div>
       </td>
