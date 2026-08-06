@@ -4,14 +4,14 @@ import BuyCoinForm from "./ByuCoinForm";
 const BuyCoinModal = ({ isOpen, onClose, coin }) => {
   if (!coin) return null;
 
-  const handleBuy = () => {
-    //диспатч
-    onClose();
-  };
+  // const handleBuy = () => {
+  //   //диспатч
+  //   onClose();
+  // };__________________________________DELETE
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={`Buy ${coin.name}`}>
-      <BuyCoinForm coin={coin} onBuy={handleBuy} onCancel={onClose} />
+      <BuyCoinForm coin={coin} onCancel={onClose} />
     </Modal>
   );
 };

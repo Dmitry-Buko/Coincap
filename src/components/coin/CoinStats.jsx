@@ -3,16 +3,20 @@ import StatCard from "./StatCard";
 import { formatCompact, formatPrice } from "../../utils/formatNumber";
 import BuyCoinForm from "./ByuCoinForm";
 
+
 const CoinStats = ({ coin }) => {
   const market = coin.market_data;
+
   const buyCoin = {
     id: coin.id,
     name: coin.name,
     price: market.current_price.usd,
   };
-  const handleBuy = () => {
-    //dispatch(addCoin)
-  };
+  
+  // const handleBuy = () => {
+  //   dispatch(addCoin())
+  // };
+
   return (
     <div className="grid grid-cols-1 gap-1 lg:grid-cols-3">
       <section className="grid grid-cols-2 gap-1 sm:grid-cols-3 lg:col-span-2 lg:grid-cols-3">
@@ -51,7 +55,7 @@ const CoinStats = ({ coin }) => {
 
       <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm lg:col-span-1">
         <h2 className="mb-4 text-lg font-semibold">Buy {coin.name}</h2>
-        <BuyCoinForm coin={buyCoin} onBuy={handleBuy} />
+        <BuyCoinForm coin={buyCoin}/>
       </section>
     </div>
   );

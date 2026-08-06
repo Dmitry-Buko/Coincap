@@ -3,12 +3,13 @@ import { useCoins } from "../../hooks/useCoins";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 import BuyCoinModal from "../coin/BuyCoinModal";
+import { useSelector } from "react-redux";
 
 const CoinsTable = () => {
   const [selectedCoin, setSelectedCoin] = useState(null);
   const { data, isLoading, isError, error } = useCoins();
-
-  console.log("data CoinsTable:", data?.[0]);//__________________________LOG
+  const  portfolioArray  = useSelector((state) => state.portfolio.coinsSaved[0]);
+  console.log("CHECKING:::", portfolioArray );
 
   const openModal = (coin) => {
     setSelectedCoin(coin);
@@ -46,7 +47,6 @@ const CoinsTable = () => {
           </tbody>
         </table>
       </div>
-
       <BuyCoinModal
         coin={selectedCoin}
         isOpen={!!selectedCoin}

@@ -1,12 +1,22 @@
 import { useState } from "react";
 import { formatPrice } from "../../utils/formatNumber";
+import { useDispatch } from "react-redux";
+import { addCoin } from "../../features/portfolio/portfolioSlice";
 
-const BuyCoinForm = ({ coin, onBuy, onCancel }) => {
+const BuyCoinForm = ({ coin, onCancel }) => {
   const [amount, setAmount] = useState("");
-  const total = Number(amount || 0) * coin.price;
+  const coinPrice = coin.current_price || coin.price
+  const total = Number(amount || 0) * coinPrice;
+  const dispatch = useDispatch();
 
   const handleBuy = () => {
-    onBuy(Number(amount));
+    dispatch(addCoin({
+      id: coin.id,
+      symbol: coin.symbol,
+      image: coin.image,
+      qtt: Number(amount),
+      purchasePrise: total,
+    }));
     setAmount("");
   };
 
@@ -28,7 +38,7 @@ const BuyCoinForm = ({ coin, onBuy, onCancel }) => {
       <div className="rounded-xl bg-gray-50 p-4">
         <div className="mb-2 flex justify-between">
           <span>Current price</span>
-          <strong>{formatPrice(coin.current_price)}</strong>
+          <strong>{formatPrice(coinPrice)}</strong>
         </div>
         <div className="flex justify-between">
           <span>Total</span>

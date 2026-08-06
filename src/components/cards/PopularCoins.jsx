@@ -11,7 +11,7 @@ const PopularCoins = () => {
         {data?.slice(0, 3).map((coin) => (
           <div
             key={coin.id}
-            className="flex flex-1 items-center gap-3 rounded-lg border border-gray-100 p-4 transition hover:border-indigo-500"
+            className="flex flex-1 items-center gap-2 rounded-lg border border-gray-100 p-4 transition hover:border-indigo-500 cursor-default"
           >
             <img src={coin.image} alt={coin.name} className="h-10 w-10" />
 
